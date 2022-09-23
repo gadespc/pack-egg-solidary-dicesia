@@ -10,7 +10,7 @@ import { PackRewards } from "@thirdweb-dev/sdk/dist/src/schema";
 import type { NextPage } from "next";
 import { useState } from "react";
 import ERC1155RewardBox from "../components/ERC1155RewardBox";
-import ERC20RewardBox from "../components/ERC20RewardBox";
+// import ERC20RewardBox from "../components/ERC20RewardBox";
 import styles from "../styles/Home.module.css";
 
 const Home: NextPage = () => {
@@ -18,7 +18,7 @@ const Home: NextPage = () => {
   const connectWithMetamask = useMetamask();
   const disconnectWallet = useDisconnect();
 
-  const pack = usePack("0x5E3fBc16146A506eB5331Cd05C702e491b09A5D4");
+  const pack = usePack("0x18C90599FC60ffa12baa0c098954a87632139C82");
 
   const { data: nfts, isLoading } = useOwnedNFTs(pack, address);
 
