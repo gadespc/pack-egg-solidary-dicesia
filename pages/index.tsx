@@ -18,7 +18,7 @@ const Home: NextPage = () => {
   const connectWithMetamask = useMetamask();
   const disconnectWallet = useDisconnect();
 
-  const pack = usePack("0x53d483C557F9DF11fa3a05994447963D41d1c8C8");
+  const pack = usePack("0x18C90599FC60ffa12baa0c098954a87632139C82");
 
   const { data: nfts, isLoading } = useOwnedNFTs(pack, address);
 
