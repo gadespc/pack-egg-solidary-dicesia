@@ -6,12 +6,14 @@ import {
   useOwnedNFTs,
   usePack,
 } from "@thirdweb-dev/react";
+import { Pack } from "@thirdweb-dev/sdk";
 import { PackRewards } from "@thirdweb-dev/sdk/dist/src/schema";
 import type { NextPage } from "next";
 import { useState } from "react";
 import ERC1155RewardBox from "../components/ERC1155RewardBox";
 // import ERC20RewardBox from "../components/ERC20RewardBox";
 import styles from "../styles/Home.module.css";
+
 
 const Home: NextPage = () => {
   const address = useAddress();
@@ -24,7 +26,12 @@ const Home: NextPage = () => {
 
   const [openedPackRewards, setOpenedPackRewards] = useState<PackRewards>();
 
+  
+
   async function open() {
+    pack?.interceptor.overrideNextTransaction(() => ({
+      gasLimit: 3000000,
+    }));
     const openedRewards = await pack?.open(0, 1);
     console.log("Opened rewards:", openedRewards);
     setOpenedPackRewards(openedRewards);
