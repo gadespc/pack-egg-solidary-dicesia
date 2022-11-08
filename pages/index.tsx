@@ -59,7 +59,7 @@ const Home: NextPage = () => {
                     contractAddress="0x18C90599FC60ffa12baa0c098954a87632139C82"
                     action={async () => {
                       pack?.interceptor.overrideNextTransaction(() => ({
-                        gasLimit: 300000,
+                        gasLimit: 350000,
                       }));
                       const openedRewards = await pack?.open(0, 1);
                       console.log("Opened rewards:", openedRewards);
